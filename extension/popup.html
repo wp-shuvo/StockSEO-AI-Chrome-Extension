@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>StockSEO AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <span style="font-size: 28px; filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.5));">🚀</span>
+      <h1>StockSEO AI</h1>
+    </header>
+
+    <!-- Login View -->
+    <div id="login-view" class="view">
+      <div class="glass-container" style="text-align: center;">
+        <p style="color: var(--text-muted); margin-bottom: 24px; line-height: 1.5;">Transform your Adobe Stock presence
+          with AI-powered SEO.</p>
+        <button id="login-btn" class="primary-btn">Sign in with Google</button>
+      </div>
+    </div>
+
+    <!-- Main View -->
+    <div id="main-view" class="view hidden">
+      <div class="user-info">
+        <span id="user-name"></span>
+        <span id="usage-count"></span>
+      </div>
+
+      <div id="detection-box" class="glass-container"
+        style="text-align: center; border-color: var(--primary-gradient);">
+        <p style="font-size: 0.8rem; margin-bottom: 12px; color: var(--text-muted);">No image detected yet.</p>
+        <button id="detect-btn" class="primary-btn" style="padding: 10px; font-size: 0.9rem;">Auto-Detect &
+          Generate</button>
+      </div>
+
+      <div id="results-container" class="hidden glass-container">
+        <div class="field">
+          <label>Generated Title</label>
+          <input type="text" id="seo-title" readonly>
+        </div>
+        <div class="field">
+          <label>Keywords (Optimized)</label>
+          <textarea id="seo-keywords" readonly></textarea>
+        </div>
+        <div class="actions">
+          <button id="copy-btn" class="secondary-btn">Copy All</button>
+          <button id="download-btn" class="secondary-btn">Download CSV</button>
+        </div>
+      </div>
+
+      <div id="loading" class="hidden" style="text-align: center;">
+        <div class="spinner"></div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Intelligence at work...</p>
+      </div>
+
+      <button id="logout-btn" class="text-btn">Log out from account</button>
+    </div>
+  </div>
+  <script src="utils.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>

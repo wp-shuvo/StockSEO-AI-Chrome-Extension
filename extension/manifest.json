@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "StockSEO AI – Adobe Stock Keyword Generator",
+  "version": "1.0",
+  "description": "Generate SEO titles and keywords for Adobe Stock images using AI.",
+  "permissions": [
+    "identity",
+    "storage",
+    "background",
+    "clipboardWrite",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*.adobe.com/*",
+    "https://stock-seo-backend.onrender.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://stock.adobe.com/*", "https://contributor.stock.adobe.com/*"],
+      "js": ["utils.js", "content.js"],
+      "css": ["content.css"]
+    }
+  ]
+}
